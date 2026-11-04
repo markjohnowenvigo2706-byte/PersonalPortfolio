@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfe4ff"/></linearGradient></defs>
+  <!-- Simple laptop illustration. Replace with your own artwork if you like. -->
+  <ellipse cx="180" cy="228" rx="150" ry="18" fill="#9cc9ff" opacity="0.6"/>
+  <rect x="70" y="30" width="220" height="150" rx="12" fill="#1c2b4a"/>
+  <rect x="80" y="40" width="200" height="130" rx="7" fill="url(#g)"/>
+  <rect x="96" y="58" width="80" height="10" rx="5" fill="#0f2347"/>
+  <rect x="96" y="80" width="120" height="6" rx="3" fill="#6ab0ff"/>
+  <rect x="96" y="94" width="96" height="6" rx="3" fill="#6ab0ff"/>
+  <rect x="96" y="120" width="56" height="22" rx="11" fill="#0f2347"/>
+  <rect x="216" y="100" width="48" height="52" rx="10" fill="#8fc2ff"/>
+  <path d="M40 184h280l-20 28H60z" fill="#0f2347"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520">
+  <!-- Simple placeholder shown until you add images/owen.png -->
+  <path d="M20 520c0-110 80-170 180-170s180 60 180 170z" fill="#1c2b4a"/>
+  <path d="M170 350h60l-30 90z" fill="#ffffff"/>
+  <rect x="165" y="290" width="70" height="70" rx="30" fill="#c99a7a"/>
+  <ellipse cx="200" cy="200" rx="85" ry="100" fill="#d9a988"/>
+  <path d="M112 190c0-80 50-110 90-110s88 30 86 110c-20-40-50-55-88-55s-68 15-88 55z" fill="#2a1d1a"/>
+</svg>

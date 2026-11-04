@@ -1,0 +1,6 @@
+Put your resume here and name it:  resume.pdf
+
+Once the file is here, the "Download Resume" buttons appear
+on the website automatically.
+
+(To use a different file name, change $resume_file in includes/data.php)
