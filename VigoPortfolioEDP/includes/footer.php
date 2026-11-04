@@ -1,14 +1,10 @@
 <?php
-/*
- * footer.php
- * The bottom of the page: brand, quick links, contact, social links.
- * Social links come from $socials in data.php.
- */
+
 ?>
 <footer class="footer">
     <div class="footer-inner">
 
-        <!-- Brand + social icons -->
+        
         <div class="footer-brand">
             <a href="#home" class="logo"><?php echo $site_logo; ?></a>
             <p><?php echo $tagline; ?></p>
@@ -25,7 +21,7 @@
             </div>
         </div>
 
-        <!-- Quick links -->
+        
         <div class="footer-col">
             <h5>Explore</h5>
             <a href="#home">Home</a>
@@ -35,7 +31,7 @@
             <a href="#contact">Contact</a>
         </div>
 
-        <!-- Contact -->
+        
         <div class="footer-col">
             <h5>Contact</h5>
             <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
@@ -51,7 +47,7 @@
     </div>
 </footer>
 
-<!-- Floating "back to top" button (appears after you scroll down) -->
+
 <button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
 
 <script src="js/script.js"></script>

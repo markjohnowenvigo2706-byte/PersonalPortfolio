@@ -1,27 +1,21 @@
 <?php
-/*
- * admin.php  -  your private INBOX
- * Open  http://localhost/portfolio/admin.php  and log in to read
- * (and delete) the messages people sent through the contact form.
- *
- * The password lives in includes/config.php (copy config.sample.php to make it).
- */
+
 session_start();
 
-// Use config.php if it exists, otherwise fall back to the sample file
+
 $using_sample = !file_exists(__DIR__ . "/includes/config.php");
 require $using_sample ? __DIR__ . "/includes/config.sample.php" : __DIR__ . "/includes/config.php";
 
 $file = __DIR__ . "/messages/messages.txt";
 
-// ---- Log out ----
+
 if (isset($_GET["logout"])) {
     session_destroy();
     header("Location: admin.php");
     exit;
 }
 
-// ---- Log in ----
+
 $error = "";
 if (isset($_POST["password"])) {
     if (hash_equals($admin_password, $_POST["password"])) {
@@ -33,12 +27,12 @@ if (isset($_POST["password"])) {
 }
 $logged_in = !empty($_SESSION["admin"]);
 
-// ---- Read all messages (each line of the file is one message) ----
+
 $messages = array();
 if ($logged_in && file_exists($file)) {
     $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-    // ---- Delete one message ----
+    
     if (isset($_POST["delete"])) {
         $remove = (int) $_POST["delete"];
         unset($lines[$remove]);
@@ -54,7 +48,7 @@ if ($logged_in && file_exists($file)) {
             $messages[] = $data;
         }
     }
-    $messages = array_reverse($messages);   // newest first
+    $messages = array_reverse($messages);   
 }
 ?>
 <!DOCTYPE html>

@@ -1,12 +1,10 @@
 <?php
-/*
- * about.php  -  ABOUT section ("Get to Know Me")
- */
+
 ?>
 <section id="about" class="section">
     <div class="container">
 
-        <!-- ===== Top: heading + intro + chips + illustration ===== -->
+        
         <div class="about-top">
             <div class="about-top-text reveal">
                 <h2 class="display"><?php echo $about_heading; ?></h2>
@@ -22,7 +20,7 @@
             </div>
         </div>
 
-        <!-- ===== Middle: picture + "A Little About Me" ===== -->
+        
         <div class="about-mid glass reveal">
             <div class="about-picture">
                 <img src="images/about-desk.svg" alt="My desk setup">
@@ -36,12 +34,12 @@
             </div>
         </div>
 
-        <!-- ===== Education + Skills ===== -->
+        
         <div class="about-grid">
 
             <div class="info-card glass reveal">
                 <h4>Education</h4>
-                <!-- [0] means "the first item" in the education list (your current school) -->
+                
                 <strong><?php echo $education_list[0]["degree"]; ?></strong>
                 <p><?php echo $education_list[0]["school"]; ?></p>
                 <small><?php echo $education_list[0]["years"]; ?></small>
@@ -63,7 +61,7 @@
 
         </div>
 
-        <!-- ===== Interests ===== -->
+        
         <div class="interests">
             <?php foreach ($interests as $interest) { ?>
                 <div class="interest glass reveal">

@@ -1,12 +1,7 @@
 <?php
-/*
- * contact.php  -  CONTACT section ("Get In Touch")
- * Left side: your contact details, availability and social links.
- * Right side: the contact form. The form sends its data to send.php,
- * which saves the message, then comes back here with ?status=...
- */
 
-// Pick the message to show (only these exact words are allowed)
+
+
 $notice_text = "";
 $notice_type = "";
 $status = $_GET["status"] ?? "";

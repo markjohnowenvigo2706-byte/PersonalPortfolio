@@ -1,40 +1,28 @@
 <?php
-/*
- * data.php
- * ---------------------------------------------------------
- * THIS IS THE ONLY FILE YOU NEED TO EDIT to change your info.
- * Every section of the website reads its text from here.
- *
- * Quick PHP guide:
- *   $name = "Owen";            -> a variable holding text
- *   array("a", "b", "c")       -> a list of things
- *   "key" => "value"           -> a labeled item inside a list
- *   Leave a link as "" to hide it.
- * ---------------------------------------------------------
- */
 
-// =========================================================
-// BASIC INFO (landing page)
-// =========================================================
+
+
+
+
 $site_logo   = "Oeng";
 $full_name   = "Mark Vigo";
 $nickname    = "Owen";
 $headline    = "An IT student turning ideas into digital experiences.";
 $subheadline = "Exploring web development, interface design, and creative solutions through meaningful projects.";
-$tagline     = "Building clean, useful websites one project at a time.";   // shown in the footer
+$tagline     = "Building clean, useful websites one project at a time.";   
 
-// School card (bottom-right of the landing page)
+
 $course      = "Bachelor of Science in";
 $course_name = "Information Technology";
 $year_level  = "3-6";
 
-// =========================================================
-// PHOTOS  (two separate photos, so each can have its own size)
-// =========================================================
-// Landing page photo: save as images/owen.png        (transparent PNG looks best)
-// "Good to see you" photo: save as images/owen-welcome.png
-// If the second one is missing, the landing photo is used instead.
-// To change SIZE or POSITION, see the "IMAGE SIZE CONTROLS" at the top of css/style.css
+
+
+
+
+
+
+
 $photo_hero = "images/owin.png";
 if (!file_exists(__DIR__ . "/../" . $photo_hero)) {
     $photo_hero = "images/placeholder.svg";
@@ -44,9 +32,9 @@ if (!file_exists(__DIR__ . "/../" . $photo_welcome)) {
     $photo_welcome = $photo_hero;
 }
 
-// =========================================================
-// HOME SECTION ("Good to see you!")
-// =========================================================
+
+
+
 $welcome_tag   = "Welcome to my Portfolio";
 $welcome_title = "Good to see you!";
 $welcome_text  = "A collection of my projects, skills, and journey as an Information Technology student. "
@@ -58,9 +46,9 @@ $highlights = array(
     array("title" => "3rd Year",               "caption" => "Current year level"),
 );
 
-// =========================================================
-// ABOUT SECTION
-// =========================================================
+
+
+
 $about_heading = "Get to Know Me";
 $about_intro   = "I'm " . $nickname . ", an IT student who enjoys building websites, designing clean "
                . "interfaces and learning something new with every project.";
@@ -75,7 +63,7 @@ $about_paragraphs = array(
     . "projects that help me grow as a developer."
 );
 
-// Skills, grouped. Add or remove names freely.
+
 $skills = array(
     "Frontend" => array("HTML", "CSS", "JavaScript"),
     "Backend"  => array("PHP", "MySQL"),
@@ -89,31 +77,31 @@ $interests = array(
     array("title" => "Learning", "text" => "Always picking up new skills"),
 );
 
-// =========================================================
-// RESUME SECTION
-// =========================================================
-// Put your resume PDF in the "resume" folder and name it resume.pdf
-// (or change the name below). If the file is missing, the download button is hidden.
+
+
+
+
+
 $resume_file = "resume/resume.pdf";
 $resume_text = "A quick look at my education, experience and certificates. You can also download the full resume.";
 
-// Education (newest first). Add more blocks if you like.
+
 $education_list = array(
     array(
         "degree" => "Bachelor of Science in Information Technology",
-        "school" => "Your University Name",
-        "years"  => "2023 - Present",
+        "school" => "Pamantasan ng Lungsod ng Valenzuela",
+        "years"  => "2024 - Present",
         "note"   => "Currently in 3rd year. Focus on web development and interface design."
     ),
     array(
         "degree" => "Senior High School",
-        "school" => "Your Senior High School",
-        "years"  => "2021 - 2023",
-        "note"   => "Your strand or track here."
+        "school" => "St.Bernadette College of Valenzuela",
+        "years"  => "2022 - 2024",
+        "note"   => "Information and Communications Technology (ICT) Strand."
     ),
 );
 
-// Experience / activities (projects, internships, organizations...)
+
 $experience = array(
     array(
         "role"    => "Web Development Student Projects",
@@ -125,17 +113,16 @@ $experience = array(
         )
     ),
     array(
-        "role"    => "Your Role Here",
-        "place"   => "Organization or Company",
-        "years"   => "Year - Year",
+        "role"    => "Community Extension Officer",
+        "place"   => "Valenzuela Information Technology Society",
+        "years"   => "2026 - 2027",
         "details" => array(
-            "Describe what you did here.",
-            "Add as many lines as you need."
+            "A Community Extension Officer is responsible for making sure that VITS does not only focus on its members but also contributes to the community through meaningful activities, outreach programs, and projects.",
         )
     ),
 );
 
-// Certificates and trainings
+
 $certificates = array(
     array("title" => "Your Certificate Name", "issuer" => "Issuer / Platform", "year" => "2025"),
     array("title" => "Another Certificate",   "issuer" => "Issuer / Platform", "year" => "2025"),
@@ -144,104 +131,90 @@ $certificates = array(
 $soft_skills = array("Teamwork", "Problem Solving", "Communication", "Time Management");
 $languages   = array("English", "Filipino");
 
-// =========================================================
-// PROJECTS SECTION
-// =========================================================
-// "featured" => true shows the project on the Home section too (max 2 shown).
-// "category" is used by the filter buttons.
-// "details"  is the longer text shown when someone clicks "Details".
-// "github", "live", "drive": leave as "" to hide that button.
-// "image": put a screenshot in images/projects/ and change the file name.
+
+
+
+
+
+
+
+
 $projects = array(
     array(
         "title"       => "Personal Portfolio",
-        "description" => "The website you are looking at right now, built with PHP, HTML, CSS and JavaScript.",
+        "description" => "A personal portfolio website that showcases my projects, skills, and resume.",
         "details"     => "A one-page portfolio with smooth scrolling, a project filter, a resume section and a contact form that saves messages with PHP. Designed in Figma first, then coded by hand.",
-        "tools"       => array("PHP", "HTML", "CSS", "JS"),
+        "tools"       => array("PHP", "HTML", "CSS", "JS", "XAMPP", "Figma"),
         "category"    => "Web",
         "year"        => "2026",
-        "image"       => "images/projects/portfolio.svg",
-        "github"      => "https://github.com/",
+        "image"       => "images/projects/Portfolio.png",
+        "github"      => "https://github.com/markjohnowenvigo2706-byte/PersonalPortfolio",
         "live"        => "",
         "drive"       => "",
         "featured"    => true
     ),
     array(
-        "title"       => "Dead Stars",
-        "description" => "A space-themed website that explores how stars live and die, with a dark, glowing design.",
-        "details"     => "A themed informational website about the life cycle of stars. Focuses on dark visuals, glowing effects and clear sections that are easy to read.",
+        "title"       => "Voluntier",
+        "description" => "A website that connects volunteers with community organizations.",
+        "details"     => "A volunteer management platform that allows users to find and sign up for volunteer opportunities. Built with HTML, CSS, and JavaScript for the frontend, and PHP with MySQL for the backend.",
         "tools"       => array("HTML", "CSS", "JS"),
         "category"    => "Web",
-        "year"        => "2026",
-        "image"       => "images/projects/dead-stars.svg",
-        "github"      => "https://github.com/",
+        "year"        => "2025",
+        "image"       => "images/projects/Voluntier.png",
+        "github"      => "https://github.com/markjohnowenvigo2706-byte/Voluntier",
         "live"        => "",
         "drive"       => "",
         "featured"    => true
     ),
-    // ---- Your two Google Drive folders. Rename them once you decide on titles. ----
+    
     array(
-        "title"       => "School Project Files 1",
-        "description" => "Files and documentation for this project are stored in Google Drive.",
+        "title"       => "Resort Finder",
+        "description" => "A school project that helps users find resorts based on location, amenities, and reviews.",
         "details"     => "Open the Google Drive folder to see the files for this project. (Replace this text with what the project is about.)",
-        "tools"       => array("Google Drive"),
+        "tools"       => array("Microsoft Visual Studio", "HTML", "CSS", "JS", "MySQL"),
         "category"    => "School Work",
         "year"        => "2026",
-        "image"       => "images/projects/generic.svg",
+        "image"       => "images/projects/Resort.png",
         "github"      => "",
         "live"        => "",
-        "drive"       => "https://drive.google.com/drive/folders/1qfZR2zx2-5f4nZDPJvUtGHqTAw7byUcQ",
+        "drive"       => "https://drive.google.com/drive/folders/1JJMzzEyi9hMClCp7R7apjFQiIp-kZDgk?usp=sharing",
         "featured"    => false
     ),
     array(
-        "title"       => "School Project Files 2",
-        "description" => "Files and documentation for this project are stored in Google Drive.",
-        "details"     => "Open the Google Drive folder to see the files for this project. (Replace this text with what the project is about.)",
-        "tools"       => array("Google Drive"),
-        "category"    => "School Work",
-        "year"        => "2026",
-        "image"       => "images/projects/generic.svg",
+        "title"       => "Vig-Food Express",
+        "description" => "A food delivery protoype designed in Figma.",
+        "details"     => "A food delivery app prototype designed in Figma. It includes screens for browsing restaurants, viewing menus, placing orders, and tracking deliveries.",
+        "tools"       => array("Figma"),
+        "category"    => "Final Requirements",
+        "year"        => "2024",
+        "image"       => "images/projects/Figma.png",
         "github"      => "",
-        "live"        => "",
-        "drive"       => "https://drive.google.com/drive/folders/1UQTTNQOG36NLzxEqHGeltHAE71jO7D2w",
-        "featured"    => false
-    ),
-    array(
-        "title"       => "Student Records System",
-        "description" => "Add, view, edit and delete student records using PHP and a MySQL database.",
-        "details"     => "A CRUD system for managing student records. Practiced forms, validation, database queries and keeping the code organized.",
-        "tools"       => array("PHP", "MySQL"),
-        "category"    => "Web",
-        "year"        => "2025",
-        "image"       => "images/projects/generic.svg",
-        "github"      => "https://github.com/",
-        "live"        => "",
+        "live"        => "https://www.figma.com/design/OqlziK2EkafK1n1xXzOUXX/VIGO_MARKJOHNOWEN_BSIT_1-6?node-id=0-1&t=dXJrG2F9jVzTkWoT-1",
         "drive"       => "",
         "featured"    => false
     ),
     array(
-        "title"       => "Landing Page Design",
-        "description" => "A clean interface designed in Figma, then coded into a responsive web page.",
-        "details"     => "A landing page concept designed in Figma with a soft blue style, then built with HTML and CSS so it works on phones and computers.",
-        "tools"       => array("Figma", "HTML", "CSS"),
-        "category"    => "Design",
+        "title"       => "XP-Station",
+        "description" => "To provide fast, reliable, and affordable computer services and internet access to the community.",
+        "tools"       => array("Canva"),
+        "category"    => "Multimedia Project",
         "year"        => "2025",
-        "image"       => "images/projects/generic.svg",
+        "image"       => "images/projects/xp.png",
         "github"      => "",
-        "live"        => "",
+        "live"        => "https://canva.link/u2f1824cmyd3um5",
         "drive"       => "",
         "featured"    => false
-    ),
+    )
 );
 
-// =========================================================
-// NUMBERS (calculated automatically - no need to edit)
-// =========================================================
+
+
+
 $skill_total = 0;
 foreach ($skills as $group_list) {
     $skill_total += count($group_list);
 }
-$years_learning = 3;   // change this number yourself
+$years_learning = 3;   
 
 $stats = array(
     array("number" => count($projects),     "label" => "Projects"),
@@ -250,26 +223,25 @@ $stats = array(
     array("number" => $years_learning,      "label" => "Years Learning"),
 );
 
-// =========================================================
-// CONTACT
-// =========================================================
-$email         = "itlympixs@gmail.com";
-$phone         = "+00 000 000 0000";           // "" hides it
-$location      = "Your City, Country";         // "" hides it
-$availability  = "Open for internships, freelance and collaborations";   // "" hides the badge
+
+
+
+$email         = "markjohnowenvigo2706@gmail.com";
+$phone         = "+63 936 992 5302";          
+$location      = "Valenzuela City, Philippines";         
+$availability  = "Open for internships, freelance and collaborations";  
 $response_time = "Usually replies within 24 hours";
 $contact_text  = "Have a project in mind, a question, or just want to say hi? Send me a message and I'll get back to you.";
 
-// Chips under "How I can help"
 $services = array("Website Development", "UI / UX Design", "School Projects", "Collaboration");
 
-// Choices in the "Subject" dropdown of the contact form
+
 $contact_subjects = array("General Inquiry", "Project Collaboration", "Internship / Job", "Freelance Work", "Feedback");
 
-// ---------------------------------------------------------
-// SOCIAL LINKS (used in the Contact section AND the footer)
-// Paste your real profile links. Leave "" to hide one.
-// ---------------------------------------------------------
+
+
+
+
 $socials = array(
     array("name" => "Facebook",  "icon" => "facebook",  "url" => "https://facebook.com/"),
     array("name" => "Instagram", "icon" => "instagram", "url" => "https://instagram.com/"),
@@ -277,9 +249,9 @@ $socials = array(
     array("name" => "LinkedIn",  "icon" => "linkedin",  "url" => ""),
 );
 
-// ---------------------------------------------------------
-// icon("name") returns a small SVG picture. You don't need to edit this.
-// ---------------------------------------------------------
+
+
+
 function icon($name)
 {
     $start = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';

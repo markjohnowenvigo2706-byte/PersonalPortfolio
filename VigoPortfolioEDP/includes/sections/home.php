@@ -1,30 +1,20 @@
 <?php
-/*
- * home.php  -  HOME section
- * Part 1: the landing hero (big name, arch, photo)
- * Part 2: the "Good to see you!" welcome box
- * Part 3: three small highlight cards + featured projects
- *
- * NOTE: the two photos have their OWN classes:
- *    .photo-hero     -> landing page photo
- *    .photo-welcome  -> "Good to see you" photo
- * Their sizes are controlled at the top of css/style.css
- */
+
 ?>
 <section id="home" class="section-home">
 
-    <!-- ========== PART 1: LANDING HERO ========== -->
+    
     <div class="container hero">
         <div class="hero-stage">
 
-            <!-- Big faded name in the background -->
+            
             <h1 class="big-name"><?php echo strtoupper($full_name); ?></h1>
 
-            <!-- Blue arch + your photo -->
+            
             <div class="arch"></div>
             <img class="photo-hero" src="<?php echo $photo_hero; ?>" alt="Photo of <?php echo $full_name; ?>">
 
-            <!-- Floating pill: name tag -->
+            
             <div class="pill pill-name">
                 <?php echo $full_name; ?>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -32,7 +22,7 @@
                 </svg>
             </div>
 
-            <!-- Floating pill: link to projects -->
+            
             <a href="#projects" class="pill pill-projects">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M3 7h6l2 2h10v10H3z"/>
@@ -40,7 +30,7 @@
                 Projects
             </a>
 
-            <!-- Bottom-left text -->
+            
             <div class="hero-text">
                 <p class="hello">Hey, I'm <?php echo $nickname; ?></p>
                 <h2><?php echo $headline; ?></h2>

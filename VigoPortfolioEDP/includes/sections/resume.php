@@ -1,17 +1,13 @@
 <?php
-/*
- * resume.php  -  RESUME section
- * Shows your numbers, education, experience, certificates and a download button.
- * All the text comes from data.php.
- */
 
-// Only show the download buttons if the PDF file really exists
+
+
 $has_resume = file_exists(__DIR__ . "/../../" . $resume_file);
 ?>
 <section id="resume" class="section">
     <div class="container">
 
-        <!-- ===== Heading + download buttons ===== -->
+        
         <div class="section-head reveal">
             <h2 class="display">My Resume</h2>
             <p class="lead"><?php echo $resume_text; ?></p>
@@ -23,13 +19,13 @@ $has_resume = file_exists(__DIR__ . "/../../" . $resume_file);
                     </a>
                     <a href="<?php echo $resume_file; ?>" class="btn-light" target="_blank" rel="noopener">View in new tab</a>
                 <?php } else { ?>
-                    <!-- Shown until you add resume/resume.pdf -->
+                    
                     <span class="chip chip-white">Resume PDF coming soon</span>
                 <?php } ?>
             </div>
         </div>
 
-        <!-- ===== Numbers (they count up when you scroll to them) ===== -->
+        
         <div class="stats">
             <?php foreach ($stats as $stat) { ?>
                 <div class="stat glass reveal">
@@ -39,7 +35,7 @@ $has_resume = file_exists(__DIR__ . "/../../" . $resume_file);
             <?php } ?>
         </div>
 
-        <!-- ===== Two columns: Experience | Education ===== -->
+        
         <div class="resume-grid">
 
             <div class="resume-col">
@@ -76,7 +72,7 @@ $has_resume = file_exists(__DIR__ . "/../../" . $resume_file);
 
         </div>
 
-        <!-- ===== Certificates + extra skills ===== -->
+        
         <div class="resume-grid">
 
             <div class="info-card glass reveal">

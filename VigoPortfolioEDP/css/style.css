@@ -1,13 +1,7 @@
-/* ==========================================================
-   style.css  -  colors, fonts and layout for the whole site
-   Sections:
-     1) Basics          2) Navbar          3) Home: landing hero
-     4) Home: welcome   5) About           6) Projects
-     7) Contact/Footer  8) Animations      9) Phones & tablets
-   ========================================================== */
 
-/* ---------- 1) BASICS ---------- */
-/* Change the colors here and the whole website updates */
+
+
+
 :root {
     --bg-top:    #d9eaff;
     --bg-bottom: #b4d6fb;
@@ -22,30 +16,27 @@
     --serif:     "Instrument Serif", Georgia, "Times New Roman", serif;
     --sans:      "Inter", "Segoe UI", Arial, sans-serif;
 
-    /* =====================================================
-       IMAGE SIZE CONTROLS  -  change these numbers to resize
-       or move your photos. Save the file and refresh the page.
-       ===================================================== */
+    
 
-    /* --- Landing page photo (class: .photo-hero) --- */
-    --hero-photo-height:  72%;     /* how tall the photo is (try 60% - 90%) */
-    --hero-photo-shift-x: 0px;     /* move left (negative) or right (positive) */
-    --hero-photo-shift-y: 0px;     /* move up (negative) or down (positive) */
+    
+    --hero-photo-height:  72%;     
+    --hero-photo-shift-x: 0px;     
+    --hero-photo-shift-y: 0px;     
 
-    /* --- Blue arch behind the landing photo (class: .arch) --- */
+    
     --hero-arch-width:    min(44vw, 420px);
     --hero-arch-height:   78%;
 
-    /* --- "Good to see you" photo (class: .photo-welcome) --- */
-    --welcome-box-height:   300px;  /* height of the blue box that holds the photo */
-    --welcome-photo-height: 95%;    /* how tall the photo is inside that box */
+    
+    --welcome-box-height:   300px;  
+    --welcome-photo-height: 95%;    
     --welcome-photo-shift-x: 0px;
     --welcome-photo-shift-y: 0px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }   /* makes the links scroll smoothly */
+html { scroll-behavior: smooth; }   
 
 body {
     font-family: var(--sans);
@@ -60,14 +51,14 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
-/* Keeps content centered and not too wide */
+
 .container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
 
-/* Every section leaves room for the fixed navbar when scrolled to */
+
 section { scroll-margin-top: 70px; }
 .section { padding: 90px 0 20px; }
 
-/* Reusable pieces */
+
 .glass {
     background: var(--glass);
     border: 1px solid var(--glass-line);
@@ -112,14 +103,14 @@ section { scroll-margin-top: 70px; }
 }
 .chip-white { background: rgba(255,255,255,0.85); color: var(--navy); }
 
-/* ---------- 2) NAVBAR ---------- */
+
 .navbar {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
     padding: 14px 0;
     transition: background 0.3s, box-shadow 0.3s;
 }
-/* JavaScript adds this class after you scroll a little */
+
 .navbar.scrolled {
     background: rgba(217, 234, 255, 0.8);
     backdrop-filter: blur(12px);
@@ -135,13 +126,13 @@ section { scroll-margin-top: 70px; }
 .nav-links { display: flex; gap: 6px; font-size: 12px; font-weight: 500; }
 .nav-links a { padding: 8px 18px; border-radius: 30px; transition: background 0.25s; }
 .nav-links a:hover  { background: rgba(255,255,255,0.5); }
-.nav-links a.active { background: rgba(255,255,255,0.85); font-weight: 600; }  /* the pill */
+.nav-links a.active { background: rgba(255,255,255,0.85); font-weight: 600; }  
 .nav-contact-mobile { display: none; }
 
 .menu-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 6px; }
 .menu-btn span { width: 22px; height: 2px; background: var(--navy); display: block; transition: 0.3s; }
 
-/* ---------- 3) HOME: LANDING HERO ---------- */
+
 .section-home { padding-top: 76px; }
 
 .hero-stage {
@@ -150,10 +141,10 @@ section { scroll-margin-top: 70px; }
     min-height: 560px;
 }
 
-/* Huge faded name behind the photo */
+
 .big-name {
     position: absolute; top: 4%; left: 50%;
-    transform: translateX(-50%);          /* centered on the screen, can be wider than the container */
+    transform: translateX(-50%);          
     width: max-content;
     font-family: var(--sans);
     font-size: clamp(60px, 14vw, 200px);
@@ -164,7 +155,7 @@ section { scroll-margin-top: 70px; }
     color: transparent; -webkit-text-fill-color: transparent;
 }
 
-/* The blue arch */
+
 .arch {
     position: absolute; bottom: 0; left: 50%;
     transform: translateX(-50%);
@@ -172,14 +163,14 @@ section { scroll-margin-top: 70px; }
     background: linear-gradient(180deg, var(--blue), #9cc9ff);
     border-radius: 999px 999px 0 0;
 }
-/* LANDING PAGE photo, standing in front of the arch (size: see IMAGE SIZE CONTROLS) */
+
 .photo-hero {
     position: absolute; bottom: 0; left: 50%;
     transform: translate(calc(-50% + var(--hero-photo-shift-x)), var(--hero-photo-shift-y));
     height: 150%; max-width: 250%; object-fit: contain;
 }
 
-/* Floating rounded labels */
+
 .pill {
     position: absolute;
     background: rgba(255,255,255,0.75);
@@ -194,13 +185,13 @@ section { scroll-margin-top: 70px; }
 .pill-projects { right: 26%; top: 33%; animation-delay: 1s; }
 .pill-projects:hover { background: var(--white); }
 
-/* Bottom-left text */
+
 .hero-text { position: absolute; left: 0; bottom: 22px; max-width: 330px; z-index: 5; }
 .hello { font-family: var(--serif); font-size: 22px; }
 .hero-text h2 { font-size: 24px; font-weight: 800; line-height: 1.2; margin: 2px 0 8px; }
 .sub { font-size: 12px; color: var(--navy); }
 
-/* Bottom-right school card */
+
 .school-card { position: absolute; right: 0; bottom: 22px; width: 185px; z-index: 5; }
 .school-card-inner {
     background: linear-gradient(135deg, #7db9ff, #5aa2f5);
@@ -216,7 +207,7 @@ section { scroll-margin-top: 70px; }
     mask-image: linear-gradient(to bottom, transparent, black);
 }
 
-/* ---------- 4) HOME: WELCOME ---------- */
+
 .welcome { padding-top: 80px; }
 
 .welcome-card {
@@ -229,19 +220,19 @@ section { scroll-margin-top: 70px; }
     border-radius: 20px; height: var(--welcome-box-height);
     display: flex; align-items: flex-end; justify-content: center; overflow: hidden;
 }
-/* "GOOD TO SEE YOU" photo (size: see IMAGE SIZE CONTROLS) */
+
 .photo-welcome {
     height: 100%; object-fit: fill; 
     transform: translate(var(--welcome-photo-shift-x), var(--welcome-photo-shift-y));
 }
 
-/* three small cards */
+
 .highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
 .highlight { padding: 18px 22px; border-radius: 18px; display: flex; flex-direction: column; }
 .highlight strong { font-size: 14px; }
 .highlight span   { font-size: 12px; color: var(--muted); }
 
-/* featured projects */
+
 .featured { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 18px; }
 .featured-card { padding: 16px 16px 26px; transition: transform 0.25s; display: block; }
 .featured-card:hover { transform: translateY(-6px); }
@@ -250,7 +241,7 @@ section { scroll-margin-top: 70px; }
 .featured-card h3 { padding: 0 8px; }
 .featured-card p  { padding: 0 8px; margin-top: 8px; font-size: 13px; color: var(--muted); }
 
-/* ---------- 5) ABOUT ---------- */
+
 .about-top { display: grid; grid-template-columns: 1.3fr 1fr; align-items: center; gap: 30px; }
 .about-top-art img { max-width: 320px; margin-left: auto; animation: float 5s ease-in-out infinite; }
 
@@ -277,7 +268,7 @@ section { scroll-margin-top: 70px; }
 .interest strong { font-size: 14px; }
 .interest span   { font-size: 12px; color: var(--muted); }
 
-/* ---------- 6) PROJECTS ---------- */
+
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 28px; }
 .filter {
     background: rgba(255,255,255,0.6); border: none; cursor: pointer;
@@ -291,7 +282,7 @@ section { scroll-margin-top: 70px; }
 .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
 .project-card { overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s; }
 .project-card:hover { transform: translateY(-6px); }
-.project-card.hide { display: none; }          /* used by the filter buttons */
+.project-card.hide { display: none; }          
 .project-thumb { aspect-ratio: 16 / 10; overflow: hidden; }
 .project-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
 .project-card:hover .project-thumb img { transform: scale(1.05); }
@@ -302,7 +293,7 @@ section { scroll-margin-top: 70px; }
 .project-links { display: flex; gap: 18px; margin-top: auto; padding-top: 18px; font-size: 12px; font-weight: 700; }
 .project-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-/* ---------- 7) CONTACT & FOOTER ---------- */
+
 .contact-form { display: flex; flex-direction: column; gap: 8px; }
 .contact-form label { font-size: 12px; font-weight: 600; }
 .contact-form input,
@@ -319,7 +310,7 @@ section { scroll-margin-top: 70px; }
 .notice.success { background: #d9f7e3; }
 .notice.error   { background: #ffd9d9; }
 
-/* Footer */
+
 .footer { max-width: 1180px; margin: 70px auto 0; padding: 0 40px 30px; color: var(--muted); }
 .footer-inner {
     display: grid; grid-template-columns: 1.6fr 1fr 1.2fr; gap: 40px;
@@ -336,7 +327,7 @@ section { scroll-margin-top: 70px; }
 }
 .footer-bottom a { font-weight: 600; color: var(--navy); }
 
-/* Social icon buttons (used in footer + contact) */
+
 .social-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .social-btn {
     width: 40px; height: 40px; border-radius: 50%;
@@ -352,9 +343,9 @@ section { scroll-margin-top: 70px; }
 }
 .social-pill:hover { transform: translateY(-2px); background: var(--dark); color: var(--white); }
 
-/* ---------- 7b) NEW FUNCTIONS ---------- */
 
-/* Scroll progress bar + back-to-top button */
+
+
 .progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--navy); z-index: 200; }
 .to-top {
     position: fixed; right: 22px; bottom: 22px; z-index: 90;
@@ -365,16 +356,16 @@ section { scroll-margin-top: 70px; }
 }
 .to-top.show { opacity: 1; pointer-events: auto; transform: none; }
 
-/* Section heading block */
+
 .section-head { margin-bottom: 8px; }
 
-/* Resume: numbers */
+
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 30px 0 34px; }
 .stat { padding: 22px; text-align: center; border-radius: 20px; }
 .stat strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: 1; }
 .stat span { font-size: 12px; color: var(--muted); font-weight: 600; }
 
-/* Resume: two columns + timeline */
+
 .resume-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; align-items: start; }
 .col-title { font-family: var(--serif); font-weight: 400; font-size: 30px; margin-bottom: 14px; }
 .timeline { display: flex; flex-direction: column; gap: 14px; position: relative; }
@@ -389,7 +380,7 @@ section { scroll-margin-top: 70px; }
 .cert:last-child { border-bottom: none; }
 .cert p { margin-top: 0; }
 
-/* Projects: search + details */
+
 .project-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin: 26px 0 28px; }
 .project-tools .filters { margin: 0; }
 .search {
@@ -406,7 +397,7 @@ section { scroll-margin-top: 70px; }
 .project-links { align-items: center; flex-wrap: wrap; }
 .empty-note { text-align: center; color: var(--muted); margin-top: 20px; }
 
-/* Details pop-up window */
+
 .modal { position: fixed; inset: 0; z-index: 300; display: flex; align-items: center; justify-content: center; padding: 20px; }
 .modal[hidden] { display: none; }
 .modal-backdrop { position: absolute; inset: 0; background: rgba(15, 35, 71, 0.45); }
@@ -417,7 +408,7 @@ section { scroll-margin-top: 70px; }
 .modal-body p { font-size: 14px; color: var(--muted); }
 @keyframes pop { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: none; } }
 
-/* Contact (detailed) */
+
 .contact-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 24px; margin-top: 30px; align-items: start; padding: 0; background: none; }
 .contact-info { display: flex; flex-direction: column; gap: 14px; }
 .availability { padding: 14px 20px; border-radius: 16px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
@@ -440,9 +431,9 @@ a.contact-card:hover { transform: translateY(-3px); }
     background: rgba(255,255,255,0.8); font-family: inherit; font-size: 14px; color: var(--navy);
 }
 .counter { text-align: right; color: var(--muted); font-size: 11px; }
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }   /* hidden spam trap */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }   
 
-/* Admin inbox page (admin.php) */
+
 .admin-wrap { max-width: 760px; margin: 50px auto; padding: 0 20px; }
 .admin-login { max-width: 380px; margin-top: 20px; }
 .admin-top { margin: 10px 0 20px; font-size: 13px; color: var(--muted); }
@@ -456,21 +447,21 @@ a.contact-card:hover { transform: translateY(-3px); }
 .admin-meta a { text-decoration: underline; }
 .admin-msg .btn-light { padding: 8px 16px; }
 
-/* ---------- 8) ANIMATIONS ---------- */
+
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-8px); }
 }
 
-/* Fade-in when scrolled into view (only when JavaScript is on) */
+
 .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .js .reveal.visible { opacity: 1; transform: none; }
 
-/* ---------- 9) PHONES & TABLETS ---------- */
+
 @media (max-width: 900px) {
     .container, .nav-inner { padding: 0 20px; }
 
-    /* menu turns into a dropdown */
+    
     .menu-btn { display: flex; }
     .nav-cta { display: none; }
     .nav-links {
@@ -483,9 +474,9 @@ a.contact-card:hover { transform: translateY(-3px); }
     .nav-links.open { display: flex; }
     .nav-contact-mobile { display: block; }
 
-    /* landing hero */
+    
     .hero-stage { height: 800px; }
-    /* On phones the sizes switch to these values (edit them here for phone view) */
+    
     :root { --hero-arch-width: 74vw; --hero-arch-height: 400px; --hero-photo-height: 360px; }
     .arch, .photo-hero { bottom: 290px; }
     .pill-name     { left: 2%;  top: 36%; }
@@ -495,7 +486,7 @@ a.contact-card:hover { transform: translateY(-3px); }
     .school-card { left: 0; right: auto; bottom: 20px; }
     .reflection  { display: none; }
 
-    /* stack the layouts */
+    
     .welcome-card, .about-top, .about-mid, .about-grid, .contact-wrap, .resume-grid { grid-template-columns: 1fr; }
     .welcome-card { padding: 28px 24px; }
     .contact-form { padding: 24px 20px; }

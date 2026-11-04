@@ -1,11 +1,7 @@
 <?php
-/*
- * projects.php  -  PROJECTS section
- * Shows every project from data.php as a card.
- * The search box, filter buttons and the "Details" window are handled by js/script.js
- */
 
-// Build a list of the categories that exist (Web, Design...) for the buttons.
+
+
 $categories = array();
 foreach ($projects as $p) {
     if (!in_array($p["category"], $categories)) {
