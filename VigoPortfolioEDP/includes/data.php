@@ -16,13 +16,6 @@ $course      = "Bachelor of Science in";
 $course_name = "Information Technology";
 $year_level  = "3-6";
 
-
-
-
-
-
-
-
 $photo_hero = "images/owin.png";
 if (!file_exists(__DIR__ . "/../" . $photo_hero)) {
     $photo_hero = "images/placeholder.svg";
@@ -31,9 +24,6 @@ $photo_welcome = "images/owe.png";
 if (!file_exists(__DIR__ . "/../" . $photo_welcome)) {
     $photo_welcome = $photo_hero;
 }
-
-
-
 
 $welcome_tag   = "Welcome to my Portfolio";
 $welcome_title = "Good to see you!";
@@ -45,9 +35,6 @@ $highlights = array(
     array("title" => "Information Technology", "caption" => "My course"),
     array("title" => "3rd Year",               "caption" => "Current year level"),
 );
-
-
-
 
 $about_heading = "Get to Know Me";
 $about_intro   = "I'm " . $nickname . ", an IT student who enjoys building websites, designing clean "
@@ -76,11 +63,6 @@ $interests = array(
     array("title" => "Games",    "text" => "Playing and breaking things"),
     array("title" => "Learning", "text" => "Always picking up new skills"),
 );
-
-
-
-
-
 
 $resume_file = "resume/resume.pdf";
 $resume_text = "A quick look at my education, experience and certificates. You can also download the full resume.";
