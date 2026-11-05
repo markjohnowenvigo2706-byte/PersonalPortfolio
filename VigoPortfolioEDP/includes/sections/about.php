@@ -16,14 +16,14 @@
                 </div>
             </div>
             <div class="about-top-art reveal">
-                <img src="images/about-laptop.svg" alt="Laptop illustration">
+                <img src="images/projects/ban.png" alt="A digital illustration">
             </div>
         </div>
 
         
         <div class="about-mid glass reveal">
             <div class="about-picture">
-                <img src="images/about-desk.svg" alt="My desk setup">
+                <img src="images/projects/mark.jpg" alt="My desk setup">
             </div>
             <div class="about-story">
                 <span class="tag"><i class="dot"></i><?php echo $about_tag; ?></span>

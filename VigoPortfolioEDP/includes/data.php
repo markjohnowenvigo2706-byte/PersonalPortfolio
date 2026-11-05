@@ -37,17 +37,15 @@ $highlights = array(
 );
 
 $about_heading = "Get to Know Me";
-$about_intro   = "I'm " . $nickname . ", an IT student who enjoys building websites, designing clean "
-               . "interfaces and learning something new with every project.";
+$about_intro   = "I'm " . $nickname . ", an IT student who enjoys learning new things, exploring different interests, and making the most out of every experience.
+I consider myself a curious and open-minded person who enjoys discovering new things, spending time on things I love, and challenging myself to grow. Whether it's exploring technology, working on creative projects, or simply enjoying life's little moments, I always find something new to learn along the way.";
 $about_chips   = array("IT Student", "Section " . $year_level, "Open to Learning");
 
 $about_tag   = "Introduction";
 $about_title = "A Little About Me";
 $about_paragraphs = array(
-    "I am currently pursuing a Bachelor of Science in Information Technology. I like turning ideas "
-    . "into real, working websites, from the first sketch in Figma to the final line of code.",
-    "Outside of school I enjoy exploring new tools, improving my design eye and working on small "
-    . "projects that help me grow as a developer."
+    "I am a dedicated and passionate third-year Bachelor of Science in Information Technology student who enjoys learning new things and exploring the world of technology. I have an interest in web development and UI/UX design, especially in turning creative ideas into functional and user-friendly websites, from designing layouts in Figma to bringing them to life through code.",
+    "I am always willing to learn, improve my skills, and take on new challenges that help me grow both personally and professionally. I believe that every project is an opportunity to gain experience, explore new ideas, and become a better version of myself.",
 );
 
 
@@ -106,8 +104,7 @@ $experience = array(
 
 
 $certificates = array(
-    array("title" => "Your Certificate Name", "issuer" => "Issuer / Platform", "year" => "2025"),
-    array("title" => "Another Certificate",   "issuer" => "Issuer / Platform", "year" => "2025"),
+    array("title" => "NC II IN COMPUTER SYSTEMS", "issuer" => "Technical Education and Skills Development Authority", "year" => "2024"),
 );
 
 $soft_skills = array("Teamwork", "Problem Solving", "Communication", "Time Management");
@@ -225,9 +222,9 @@ $contact_subjects = array("General Inquiry", "Project Collaboration", "Internshi
 
 
 $socials = array(
-    array("name" => "Facebook",  "icon" => "facebook",  "url" => "https://facebook.com/"),
-    array("name" => "Instagram", "icon" => "instagram", "url" => "https://instagram.com/"),
-    array("name" => "GitHub",    "icon" => "github",    "url" => "https://github.com/"),
+    array("name" => "Facebook",  "icon" => "facebook",  "url" => "https://www.facebook.com/share/1CGo5yxjQ2/"),
+    array("name" => "Instagram", "icon" => "instagram", "url" => "https://www.instagram.com/markvigoooo?rpxt=MW1vYmNscmR4MGtyeQ=="),
+    array("name" => "GitHub",    "icon" => "github",    "url" => "https://github.com/markjohnowenvigo2706-byte"),
     array("name" => "LinkedIn",  "icon" => "linkedin",  "url" => ""),
 );
 
