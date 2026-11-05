@@ -12,7 +12,10 @@
 
             
             <div class="arch"></div>
-            <img class="photo-hero" src="<?php echo $photo_hero; ?>" alt="Photo of <?php echo $full_name; ?>">
+            <picture class="hero-portrait">
+                <source media="(max-width: 900px)" srcset="images/owin-mobile.png">
+                <img class="photo-hero" src="<?php echo $photo_hero; ?>" alt="Photo of <?php echo $full_name; ?>">
+            </picture>
 
             
             <div class="pill pill-name">

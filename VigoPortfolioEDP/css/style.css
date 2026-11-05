@@ -680,3 +680,31 @@ a.contact-card:hover { transform: translateY(-3px); }
     .photo-hero { height: 285px; }
     .arch { height: 225px; }
 }
+
+/* Portrait correction: the original PNG has a large transparent top margin.
+   Mobile uses the tightly cropped image through the <picture> source. */
+@media (max-width: 900px) {
+    .hero-stage { padding-top: 490px; }
+    .hero-portrait { position: static; }
+    .hero-portrait .photo-hero {
+        position: absolute; top: 115px; bottom: auto; left: 50%;
+        width: min(70%, 360px); height: auto; max-width: none;
+        transform: translateX(-50%); object-fit: contain;
+    }
+    .arch { top: 110px; height: 310px; width: min(70%, 350px); }
+    .big-name { top: 45px; }
+    .pill-name { top: 305px; }
+    .pill-projects { top: 225px; }
+}
+@media (max-width: 480px) {
+    .hero-stage { padding-top: clamp(405px, 113vw, 465px); }
+    .arch { top: 107px; width: 78%; height: clamp(235px, 67vw, 280px); }
+    .hero-portrait .photo-hero { top: 118px; width: min(82%, 320px); height: auto; }
+    .big-name { top: 52px; }
+    .pill-name { top: clamp(270px, 76vw, 320px); }
+    .pill-projects { top: clamp(205px, 57vw, 245px); }
+}
+@media (max-width: 360px) {
+    .hero-stage { padding-top: 410px; }
+    .hero-portrait .photo-hero { width: 83%; }
+}
