@@ -1,24 +1,48 @@
+// Theme preference is applied in the document head to prevent a light-mode flash.
+(function () {
+    var toggle = document.getElementById("themeToggle");
+    if (!toggle) return;
 
+    function updateToggle() {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+        toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+        toggle.setAttribute("title", dark ? "Switch to light mode" : "Switch to dark mode");
+        toggle.setAttribute("aria-pressed", String(dark));
+    }
 
+    updateToggle();
+
+    toggle.addEventListener("click", function () {
+        var dark = document.documentElement.getAttribute("data-theme") === "dark";
+
+        if (dark) {
+            document.documentElement.removeAttribute("data-theme");
+        } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+
+        try {
+            localStorage.setItem("vigo-theme", dark ? "light" : "dark");
+        } catch (e) {}
+
+        updateToggle();
+    });
+})();
 
 var navbar   = document.getElementById("navbar");
 var progress = document.getElementById("progress");
 var toTop    = document.getElementById("toTop");
 
 window.addEventListener("scroll", function () {
-
-    
     if (window.scrollY > 30) {
         navbar.classList.add("scrolled");
     } else {
         navbar.classList.remove("scrolled");
     }
 
-    
     var scrollable = document.documentElement.scrollHeight - window.innerHeight;
     progress.style.width = (window.scrollY / scrollable * 100) + "%";
 
-    
     if (window.scrollY > 600) {
         toTop.classList.add("show");
     } else {
@@ -30,11 +54,8 @@ toTop.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-
-
 var sections = document.querySelectorAll("section");
 var navLinks = document.querySelectorAll(".nav-links a[data-section]");
-
 
 var sectionObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -53,15 +74,13 @@ sections.forEach(function (section) {
     sectionObserver.observe(section);
 });
 
-
-
 var revealItems = document.querySelectorAll(".reveal");
 
 var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);   
+            revealObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.12 });
@@ -70,19 +89,16 @@ revealItems.forEach(function (item) {
     revealObserver.observe(item);
 });
 
-
-
 var counters = document.querySelectorAll(".count");
 
 var countObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         if (!entry.isIntersecting) { return; }
 
-        var el     = entry.target;
+        var el = entry.target;
         var target = parseInt(el.dataset.target, 10);
         var current = 0;
 
-        
         var timer = setInterval(function () {
             current++;
             el.textContent = current;
@@ -98,14 +114,11 @@ counters.forEach(function (counter) {
     countObserver.observe(counter);
 });
 
-
-
 var filterButtons = document.querySelectorAll(".filter");
-var projectCards  = document.querySelectorAll(".project-card");
-var searchBox     = document.getElementById("projectSearch");
-var emptyNote     = document.getElementById("emptyNote");
-var chosenFilter  = "all";
-
+var projectCards = document.querySelectorAll(".project-card");
+var searchBox = document.getElementById("projectSearch");
+var emptyNote = document.getElementById("emptyNote");
+var chosenFilter = "all";
 
 function updateProjects() {
     var text = searchBox.value.toLowerCase().trim();
@@ -123,7 +136,7 @@ function updateProjects() {
         }
     });
 
-    emptyNote.hidden = (visible !== 0);   
+    emptyNote.hidden = (visible !== 0);
 }
 
 filterButtons.forEach(function (button) {
@@ -137,16 +150,13 @@ filterButtons.forEach(function (button) {
 
 searchBox.addEventListener("input", updateProjects);
 
-
-
-var modal     = document.getElementById("modal");
+var modal = document.getElementById("modal");
 var modalBody = document.getElementById("modalBody");
 
 function openModal(card) {
-    
     modalBody.innerHTML = card.querySelector(".project-modal-content").innerHTML;
     modal.hidden = false;
-    document.body.style.overflow = "hidden";   
+    document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
@@ -160,32 +170,27 @@ document.querySelectorAll(".details-btn").forEach(function (button) {
     });
 });
 
-
 modal.querySelectorAll("[data-close]").forEach(function (el) {
     el.addEventListener("click", closeModal);
 });
+
 document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && !modal.hidden) { closeModal(); }
 });
 
-
-
 var messageBox = document.getElementById("message");
-var charCount  = document.getElementById("charCount");
+var charCount = document.getElementById("charCount");
 
 messageBox.addEventListener("input", function () {
     charCount.textContent = messageBox.value.length;
 });
 
-
-
-var menuBtn     = document.getElementById("menuBtn");
+var menuBtn = document.getElementById("menuBtn");
 var navLinksBox = document.getElementById("navLinks");
 
 menuBtn.addEventListener("click", function () {
     navLinksBox.classList.toggle("open");
 });
-
 
 navLinksBox.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {

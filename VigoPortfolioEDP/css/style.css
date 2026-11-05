@@ -500,3 +500,183 @@ a.contact-card:hover { transform: translateY(-3px); }
     .highlights, .featured { grid-template-columns: 1fr; }
     .interests { grid-template-columns: repeat(2, 1fr); }
 }
+
+
+/* Portfolio theme toggle — maintains the original blue/glass aesthetic. */
+.theme-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 39px; height: 39px; flex-shrink: 0;
+    margin-left: auto; margin-right: 12px;
+    border: 1px solid var(--glass-line); border-radius: 50%;
+    background: var(--glass); color: var(--navy);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    cursor: pointer; transition: background .2s, transform .2s, color .2s;
+}
+.theme-toggle:hover { transform: translateY(-2px); background: var(--glass-line); }
+.theme-toggle:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.theme-toggle svg { width: 19px; height: 19px; }
+.theme-sun { display: none; }
+[data-theme="dark"] .theme-moon { display: none; }
+[data-theme="dark"] .theme-sun { display: block; }
+@media (max-width: 900px) { .theme-toggle { margin-left: auto; margin-right: 14px; } }
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-top: #152e50;
+    --bg-bottom: #09182c;
+    --blue: #77baff;
+    --blue-deep: #a2cfff;
+    --navy: #edf5ff;
+    --muted: #b6cbe4;
+    --dark: #a7d2ff;
+    --white: #0c2039;
+    --glass: rgba(27, 52, 82, .76);
+    --glass-line: rgba(158, 199, 242, .23);
+}
+[data-theme="dark"] .glass { box-shadow: 0 10px 35px rgba(0, 6, 20, .26); }
+[data-theme="dark"] .navbar.scrolled { background: rgba(10, 27, 48, .88); box-shadow: 0 4px 24px rgba(0,0,0,.24); }
+[data-theme="dark"] .nav-links a:hover { background: rgba(125, 180, 240, .13); }
+[data-theme="dark"] .nav-links a.active { background: rgba(125, 180, 240, .22); }
+[data-theme="dark"] .tag,
+[data-theme="dark"] .pill-name,
+[data-theme="dark"] .pill-projects,
+[data-theme="dark"] .filter,
+[data-theme="dark"] .search,
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form textarea,
+[data-theme="dark"] .contact-form select,
+[data-theme="dark"] .social-btn,
+[data-theme="dark"] .social-pill {
+    background: rgba(32, 62, 97, .9);
+    border-color: var(--glass-line);
+    color: var(--navy);
+}
+[data-theme="dark"] .btn-light,
+[data-theme="dark"] .chip-white { background: rgba(51, 88, 126, .9); color: var(--navy); }
+[data-theme="dark"] .btn-light:hover,
+[data-theme="dark"] .filter:hover { background: rgba(71, 111, 154, .95); }
+[data-theme="dark"] .btn-dark,
+[data-theme="dark"] .filter.active,
+[data-theme="dark"] .details-btn { background: #9bcbff; color: #102844; }
+[data-theme="dark"] .btn-dark:hover,
+[data-theme="dark"] .details-btn:hover { background: #c1e0ff; color: #102844; }
+[data-theme="dark"] .chip { background: rgba(110, 174, 244, .17); color: #b5dbff; }
+[data-theme="dark"] .big-name {
+    background: linear-gradient(180deg, rgba(175, 213, 255, .48), rgba(175, 213, 255, 0));
+    -webkit-background-clip: text; background-clip: text;
+}
+[data-theme="dark"] .modal-box { background: #172e4b; color: var(--navy); }
+[data-theme="dark"] .notice.success { background: #183f37; color: #d4ffe9; }
+[data-theme="dark"] .notice.error { background: #512c39; color: #ffe1e5; }
+[data-theme="dark"] .contact-card .ci { color: #102844; }
+[data-theme="dark"] .arch,
+[data-theme="dark"] .welcome-photo-bg { filter: brightness(.82) saturate(.9); }
+@media (max-width: 900px) {
+    [data-theme="dark"] .nav-links { background: rgba(18, 40, 67, .98); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+}
+
+/* Center navigation links on desktop */
+@media (min-width: 901px) {
+    .nav-inner { position: relative; }
+    .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Responsive refinements: mobile hero, navigation, and content. */
+@media (max-width: 900px) {
+    .nav-inner { position: relative; }
+    .nav-links { transform: none; width: auto; }
+    .section-home { padding-top: 76px; }
+    .hero-stage {
+        height: auto;
+        min-height: 0;
+        padding-top: clamp(325px, 88vw, 440px);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    .big-name {
+        top: 34px;
+        width: 100%;
+        text-align: center;
+        font-size: clamp(38px, 11.5vw, 100px);
+        letter-spacing: -0.045em;
+        white-space: nowrap;
+    }
+    .arch {
+        top: 86px;
+        bottom: auto;
+        width: min(75%, 350px);
+        height: clamp(235px, 67vw, 325px);
+    }
+    .photo-hero {
+        top: 42px;
+        bottom: auto;
+        height: clamp(290px, 82vw, 390px);
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: bottom center;
+    }
+    .pill { font-size: 10px; padding: 7px 10px; }
+    .pill-name { top: clamp(210px, 56vw, 290px); left: 0; }
+    .pill-projects { top: clamp(155px, 43vw, 225px); right: 0; }
+    .hero-text {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        max-width: 520px;
+        width: 100%;
+        z-index: 5;
+    }
+    .hero-text h2 { font-size: clamp(20px, 4.6vw, 26px); }
+    .school-card {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        width: min(230px, 100%);
+        z-index: 5;
+    }
+    .reflection { display: none; }
+    .welcome { padding-top: 36px; }
+    .welcome-card { gap: 24px; }
+    .welcome-photo { height: min(70vw, 300px); }
+}
+@media (max-width: 480px) {
+    .container, .nav-inner { padding-left: 16px; padding-right: 16px; }
+    .navbar { padding: 12px 0; }
+    .logo { font-size: 28px; }
+    .theme-toggle { width: 36px; height: 36px; margin-right: 10px; }
+    .nav-links { left: 16px; right: 16px; }
+    .hero-stage { padding-top: clamp(325px, 96vw, 390px); gap: 14px; }
+    .big-name { top: 46px; font-size: clamp(36px, 11.5vw, 54px); }
+    .arch { top: 96px; width: 77%; height: clamp(225px, 68vw, 290px); }
+    .photo-hero { top: 56px; height: clamp(280px, 83vw, 345px); }
+    .pill-name { top: 235px; }
+    .pill-projects { top: 170px; }
+    .hero-text { text-align: center; }
+    .hello { font-size: 20px; }
+    .hero-text h2 { font-size: clamp(19px, 5.4vw, 24px); }
+    .sub { font-size: 12px; }
+    .school-card { align-self: center; }
+    .welcome { padding-top: 32px; }
+    .welcome-card { padding: 24px 18px; }
+    .welcome-text .display { font-size: clamp(38px, 11vw, 56px); }
+    .welcome-photo { height: 240px; }
+    .section { padding-top: 65px; }
+    .project-grid { grid-template-columns: minmax(0, 1fr); }
+    .contact-card, .info-card { min-width: 0; }
+}
+@media (max-width: 360px) {
+    .hero-stage { padding-top: 335px; }
+    .pill-name { top: 215px; }
+    .pill-projects { top: 155px; }
+    .photo-hero { height: 285px; }
+    .arch { height: 225px; }
+}
