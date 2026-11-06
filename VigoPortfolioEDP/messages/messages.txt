@@ -1,2 +1,3 @@
 {"date":"2026-11-04 21:24","name":"Richmond Quizon","email":"richmondquizon0948@gmail.com","phone":"09683365853","subject":"Feedback","message":"Kamusta ka na"}
 {"date":"2026-11-04 21:30","name":"Mon","email":"mon@gmail.com","phone":"09090909090","subject":"Internship \/ Job","message":"hello bai"}
+{"date":"2026-11-06 20:29","name":"Lesther","email":"Lesther@gmail.com","phone":"09124812951","subject":"General Inquiry","message":"hello world"}
